@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Automation Superapp dev">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Http URL/API Test">
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController">
+          <stringProp name="LoopController.loops">1</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer">
+          <stringProp name="ConstantTimer.delay">1000</stringProp>
+        </ConstantTimer>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="devXapiKey" elementType="Argument">
+              <stringProp name="Argument.name">devXapiKey</stringProp>
+              <stringProp name="Argument.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="devCognitoToken" elementType="Argument">
+              <stringProp name="Argument.name">devCognitoToken</stringProp>
+              <stringProp name="Argument.value">eyJraWQiOiJHdlBORnZiR2VTWEpPTFBBY21BUzY3Y25xZ2RKRUQ2YkpJaEVQNE5BOEI0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWRtaW5cL3dyaXRlIGFkbWluXC9yZWFkIiwiYXV0aF90aW1lIjoxNzEyNjYxNjg5LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX2dZTTVPN005MiIsImV4cCI6MTcxMjY2NTI4OSwiaWF0IjoxNzEyNjYxNjg5LCJ2ZXJzaW9uIjoyLCJqdGkiOiIzZjQ5NWJiYy00NDEzLTRiYjEtOGE0NC0yZmE2Y2M1MDgxMGQiLCJjbGllbnRfaWQiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayJ9.Q3Fb9tcp8nqgNOTXPHqw18aSPJem4D4QtlfXaYA7J752urKA8babGuO7a8cfM1RDUK72gHw43rP2uTqP2JIICuKWtAKxlhL8mwQB5uZMKjW5Z7xTGuCIQZUXGtMW_FxVkQCzXXq8gYuo_FVyaQ8WbxvfBMPjzak11A0NXO0irw4ICM9tb56bQ4Y0Ag_baAbpnh-wADQtrrwY_ajBrfkcvI4blPFA1-4--ebKPOJqoxuvJzKvuu0uwTLeRWO3-shufWt3q7mBSM1mvvhl-JJOPdjuN_0VF8cKEgtZOlCXvnEi_37l54XVQpbPRcVos8XIYRZQeh7u5cUWJ1_wLQi9YA</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="devSuperAppAuthToken" elementType="Argument">
+              <stringProp name="Argument.name">devSuperAppAuthToken</stringProp>
+              <stringProp name="Argument.value">eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IkNDQ0FMMTUwOV9aVlAiLCJpYXQiOjE3MTI2NjE3MTYsImV4cCI6MTcxMzUyNTcxNn0.3vfOxP6WdSB_I1eK4BA8Rnso7d32V2vapxE3rW6l0sPuGfWXPyjzUj_y-uy-VaPfcrTvXDXQ0UROV6zRd_I5QA</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="Cookie Manager">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+          <boolProp name="CookieManager.controlledByThreadGroup">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Cognito Token" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/cognito-token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Basic MW4xMzBkdWZtbjdha2Q4Mmhmc3J0MmhsdGs6aGwwczZ0Zm5tNnY0bTB2aHFrbGtpNG1qOG1vOXNza2ZkbnM1NHVnMWRnbHVpN282cmNn</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">*/*</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Length</stringProp>
+                <stringProp name="Header.value">0</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">PostmanRuntime/7.37.0</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">jsonData</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..payload</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers"> 1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import javax.crypto.Cipher
+import javax.crypto.spec.IvParameterSpec
+import javax.crypto.spec.SecretKeySpec
+import org.apache.commons.codec.binary.Base64
+import groovy.json.JsonSlurper
+// Assuming &apos;jsonData&apos; is the variable holding encrypted response as a JSON string
+
+String encryptedData = new String(vars.get(&quot;jsonData&quot;).getBytes(&quot;UTF-8&quot;))
+
+String keyString = &quot;LT264K56MUPSKOE98MEK54EFJI672KSW&quot;
+String ivString = &quot;TLM499M2719L4TI4&quot;
+byte[] keyBytes = keyString.getBytes(&quot;UTF-8&quot;)
+byte[] ivBytes = ivString.getBytes(&quot;UTF-8&quot;)
+SecretKeySpec key = new SecretKeySpec(keyBytes, &quot;AES&quot;)
+IvParameterSpec iv = new IvParameterSpec(ivBytes)
+//Cipher cipher = Cipher.getInstance(&quot;AES/CBC/ZeroBytePadding&quot;)
+Cipher cipher = Cipher.getInstance(&quot;AES/CBC/PKCS5Padding&quot;);
+
+cipher.init(Cipher.DECRYPT_MODE, key, iv)
+byte[] decryptedBytes = cipher.doFinal(Base64.decodeBase64(encryptedData.trim()))
+String decryptedText = new String(decryptedBytes).replaceAll(&quot;[^\\x20-\\x7E]&quot;, &quot;&quot;)
+log.info(&quot;Decryped   &quot;+ decryptedText)
+// Parse the decrypted string to JSON
+JsonSlurper jsonSlurper = new JsonSlurper()
+def responsePlainText = jsonSlurper.parseText(decryptedText)
+// Log or use the decrypted and parsed data as needed to see if the correct response is generated
+log.info(&quot;Toen &quot;+responsePlainText.toString())
+log.info(&quot;TTOKEN &quot;+ responsePlainText.data.access_token);
+vars.put(&quot;devCognitoToken&quot;, responsePlainText.data.access_token)
+// To use the decrypted response in subsequent requests or assertions, you might save it as JMeter variables
+// Example: vars.put(&quot;responsePlainText&quot;, responsePlainText.toString())</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Login API" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/auth/login</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;PhJ2Ul6geDCAxMii21VHojzFIbazxjHR+fgoz366th0z1ENpvVz21fDM5E7eXZ+YNF70s5g1kAPGFVNANJFNZ/PGvt9OmowM9QcnxC5Jmbl1x09n8ZwKqa+mZARELLxoAosZ/AFPrDkoViaMXXubZrMW1tnEpttQ5dTje0sTXaoT5cy02Xl4D9blV2mSCRysAik8xSC6iHWoAkRFq4FUxQ==&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor" enabled="false">
+            <stringProp name="JSONPostProcessor.referenceNames">jsonDataSuperApp</stringProp>
+            <stringProp name="JSONPostProcessor.jsonPathExprs">$..payload</stringProp>
+            <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
+          </JSONPostProcessor>
+          <hashTree/>
+          <JSR223PostProcessor guiclass="TestBeanGUI" testclass="JSR223PostProcessor" testname="JSR223 PostProcessor" enabled="false">
+            <stringProp name="cacheKey">true</stringProp>
+            <stringProp name="filename"></stringProp>
+            <stringProp name="parameters"></stringProp>
+            <stringProp name="script">import javax.crypto.Cipher
+import javax.crypto.spec.IvParameterSpec
+import javax.crypto.spec.SecretKeySpec
+import org.apache.commons.codec.binary.Base64
+import groovy.json.JsonSlurper
+// Assuming &apos;jsonData&apos; is the variable holding encrypted response as a JSON string
+
+String encryptedData = new String(vars.get(&quot;jsonDataSuperApp&quot;).getBytes(&quot;UTF-8&quot;))
+
+String keyString = &quot;LT264K56MUPSKOE98MEK54EFJI672KSW&quot;
+String ivString = &quot;TLM499M2719L4TI4&quot;
+byte[] keyBytes = keyString.getBytes(&quot;UTF-8&quot;)
+byte[] ivBytes = ivString.getBytes(&quot;UTF-8&quot;)
+SecretKeySpec key = new SecretKeySpec(keyBytes, &quot;AES&quot;)
+IvParameterSpec iv = new IvParameterSpec(ivBytes)
+//Cipher cipher = Cipher.getInstance(&quot;AES/CBC/ZeroBytePadding&quot;)
+Cipher cipher = Cipher.getInstance(&quot;AES/CBC/PKCS5Padding&quot;);
+
+cipher.init(Cipher.DECRYPT_MODE, key, iv)
+byte[] decryptedBytes = cipher.doFinal(Base64.decodeBase64(encryptedData.trim()))
+String decryptedText = new String(decryptedBytes).replaceAll(&quot;[^\\x20-\\x7E]&quot;, &quot;&quot;)
+log.info(&quot;Decryped   &quot;+ decryptedText)
+// Parse the decrypted string to JSON
+JsonSlurper jsonSlurper = new JsonSlurper()
+def responsePlainText = jsonSlurper.parseText(decryptedText)
+// Log or use the decrypted and parsed data as needed to see if the correct response is generated
+log.info(&quot;Toen &quot;+responsePlainText.toString())
+log.info(&quot;TTOKEN &quot;+ responsePlainText.data.jwtToken);
+vars.put(&quot;devSuperAppAuthToken&quot;, responsePlainText.data.jwtToken)
+// To use the decrypted response in subsequent requests or assertions, you might save it as JMeter variables
+// Example: vars.put(&quot;responsePlainText&quot;, responsePlainText.toString())</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PostProcessor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="User-Status API">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/user-status</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;0BgP490InGApO3qHqo55E/ETBVXJXmNzdU0EO22dZeI=&quot; //// producer - VJJPR0893 - inactive user&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="quoteList">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/lead/quotes-list</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;mTiBzKfxYjGpIQ0IFi8AalMsdhxZ+jaIcgq4eiX9cp/6iNCE9/WwxAI2nAPWWNNaVseJzjdr4sRJWAFfzFJ1b27R16rquPzZHwip6krSxz8=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="update-crm-leads">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/update-cat-leads</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">// {&#xd;
+//     &quot;superAppCoRelationId&quot;: &quot;ljdlkfjklsjfkj3234234234&quot;,&#xd;
+//     &quot;leads&quot;: [&#xd;
+//         {&#xd;
+//             &quot;agentId&quot;: &quot;90000&quot;,&#xd;
+//             &quot;customerName&quot;: &quot;ramesh goli&quot;,&#xd;
+//             &quot;mobileNumber&quot;: &quot;9090916234&quot;,&#xd;
+//             &quot;gender&quot;: &quot;Male&quot;,&#xd;
+//             &quot;catSource&quot;: &quot;Self Lead&quot;,&#xd;
+//             &quot;photo&quot;: &quot;/imagepath/photo.png&quot;,&#xd;
+//             &quot;dob&quot;: &quot;01/12/2000&quot;,&#xd;
+//             &quot;alternateMobileNo&quot;: &quot;9090909090&quot;,&#xd;
+//             &quot;email&quot;: &quot;ramesh@monocept.com&quot;,&#xd;
+//             &quot;nationality&quot;: &quot;Indian&quot;,&#xd;
+//             &quot;occupation&quot;: &quot;Salaried&quot;,&#xd;
+//             &quot;education&quot;: &quot;Graduate&quot;,&#xd;
+//             &quot;isPermanentAddressSame&quot;: false,&#xd;
+//             &quot;houseNo&quot;: &quot;HA091&quot;,&#xd;
+//             &quot;pinCode&quot;: &quot;752030&quot;,&#xd;
+//             &quot;city&quot;: &quot;Balugaon&quot;,&#xd;
+//             &quot;state&quot;: &quot;Odisha&quot;,&#xd;
+//             &quot;commHouseNo&quot;: &quot;HA091&quot;,&#xd;
+//             &quot;commPinCode&quot;: &quot;752031&quot;,&#xd;
+//             &quot;commCity&quot;: &quot;Banpur&quot;,&#xd;
+//             &quot;commState&quot;: &quot;Odisha&quot;,&#xd;
+//             &quot;campaign&quot;: &quot;Yes&quot;,&#xd;
+//             &quot;investment&quot;: &quot;Bonds&quot;,&#xd;
+//             &quot;income&quot;: &quot;&lt;5L&quot;,&#xd;
+//             &quot;leadStatus&quot;: &quot;Fresh Lead&quot;,&#xd;
+//             &quot;leadId&quot;: &quot;345781&quot;,&#xd;
+//             &quot;vymoId&quot;: &quot;9999999999&quot;,&#xd;
+//             &quot;probabilityClosure&quot;: &quot;Hot&quot;,&#xd;
+//             &quot;mainCampaign&quot;: &quot;Tejas&quot;,&#xd;
+//             &quot;lastActivityTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;,&#xd;
+//             &quot;customerId&quot;: &quot;188888818&quot;,&#xd;
+//             &quot;createTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;,&#xd;
+//             &quot;updateTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;&#xd;
+//         }&#xd;
+//     ]&#xd;
+// }&#xd;
+&#xd;
+{&#xd;
+    &quot;payload&quot;:&quot;xTMlw7+a1MLHS8cTd+lykd7zG+KxzHYIF5Hpmaj+sfrXR5Le9zQMHsy5muvDIJ6Jn04GENZ8xYRUCvX5GgFKdMtcO7KaWj2AWoK5wcnQRLB7rrYSBTWMZFdlIZVqdfyXqsirrhjGeK9jVFq+LZnAk3R/x2mLLtEB0beawdTgz8ckKU4AxUOotUyXxfNanh7od8Ipr2C0dwOQq1g2AhKb4Hy9G2//owoQ40AoWQDiKi5mD+pOHZCU0vMdC4CIXI6n9lL1HkdTGKvAQGV6MT2pYsBkspS8l+qQ70sVCPoDOJfvhGxGRAoZqJDmqFJyu+2pf0jQJywTOZJz60m1Nrra8iVt5H4glPCJQQM0sNfzFsBZz6Q8QelXkR/vx4UeXePLnAEdu+oOb39Vsu9lkjzBtGCE7OQJIbVqiM+xe3tUGXGAj+ak1rXpL2O4RU0p2/1E2Gj58iiWh0oH5qcGHzcH4PxbUCEdwICASjre5x/aurHLxAjSuO9vIl2EGkp2omE6OItswpM4bCdTGR8E6LLymQ1vDx6rKRr+/9dHkUTqf6L8cfo6meV1zU3/BDnqLdROFtwb1no2rGAKACK1dEVH3QUT3eCAsKCSgqOPn6GGGoihZPhJreiimqGkYwM73YHGJEL7sRV0Jvi/hurvoq6TyA/6JuxPGoLDQI+VcbwzXo6uFNVWL5n6rvXYO1TfDN4Y78KGsc4I3gYWDAEr/jc65U7yY7/Xx8i0j0hVlXHa55i7DITnLgzK/l2KqFHLmT0BRyYSgD0OEpueUNCvwYWmEU8zHdmNcT1GFU8Pejc/rvxEMjw/UgoG5l+z05NsQ8kTvJvidthr3lgZLOuYGzdNOpRugCGrlSruiZihLsI4q+q2FAk/Ym/9cnmojTo/QFFQQ19+KxRg0RLh4ida4tVNrbSfUWVzrRuX5Kakn90c//rVAQ3PVj8NVMRREZfBIfe7HEzlWKBjNj5LtkdM6D37Q+pKAa8unv/2FeJiOqLEouLZIybwQ1+Zy6jDhxjIYJVe/Yx2uSWZoEMWGJhnOyCAeZyqXv0l6migVLCvGbNnLGwbMejouFYob1DwDWv0Xf0YeuJN0lReD7P+VMhrbOE7tPSgh8AZlkI4B3K7H4sXjnzzFrHbjWcGcLRtNsFyJxFDKPdyHqXXftRyxmeRTrHbhQErYchXmRn4H4ulvhRLFJI4yMCx9KIvb5zlIQTrf48bhrtk2PjvljUIfQaDcvfgwRjZztpN+kUlT1IwtaH9J3m/ZK3g836gsDGHG1/EORN8QNKaAogALR4RC1B99HijeACJ7UU75toxdir/JRM6nOzKtQ47sxM0j7PMrSuDhXaCLbgKZyntnk6XJJuQE9WCgpTW9Itrgaq2xhXXr85olKxx0bJeQtmofWrvu1HMorHABgm2wLpShoveGnuxSOVgBKIX6Ndku0pCEkSBphxcADb/cfmckQocIiGEyGQHxenNY1pjNvJljS8vxEMev0tt6EBeMzngI6YbcvOBVxxSzCLN4osClRuXT2rOSnJaivCmQ1pxgQuCdtOcxZOEW/lUTUiI7VBWhEsvXj+56Hlsm1XY3bxvN2/YhcG6nAiSzb6C51PtUYQd0JnHeJFN9fiRT3fnBLZTAWyp/mJYiS7RubPEaTWD8d2CYVVwCAN505bURF4MLwDtoo73U55iZmlfXpYQzM8EucsdADko/uklAP769NM/Grgblth0TuWHODsx7W/sIg9QoFeI1uF3IR4ziP9gzT/BW67PnTkiXPp0wJKzmbtfpO3PWAogppzkLMg4R1V5q1zxoQjMO8MphFgLphUFMuT2PuOPQXG7bjfqtL8Gmax8qOwQeXA8nZPz9r0iepSDdOGYqUQuCb2NJ6JDDjwZiTBywsD1/KsErIcDbmYLjVO2yg7Nxbh/xfOaYEYliHnIf2XDRcbqRi75vweJTt5oL/KSGs7bFipxZIRtbIq3DE1nDbSDu7fP0YI/q0Mn23Szt8k/aBZCAuiqflH6J1DKgoyEa72q9vEhRFrCUPlKyn5W8+aviJYRFpYht89wSxz/10Zw07C1KkCQIi8n+oORcF8hvcFOAyo1IeaFPm0=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="leadAtGlance" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/leads-at-glance</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;Q3fv0SzvzMcCoyeS3U7nDGFkxqntNyojHhKjlfrTkjgK0IEYoU71z6ah/FGqjw0CU3zLkRRAYH5zupc1xcK/3A==&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="leadSync" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/lead-sync</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8bEivCpPLULL12ZSFch+lm8b6rfCbpDD0zDjIj3j63hyMmq5upDGVEGXXhYtgDh6vGci84FpvzQbLOdY7EkcG8mdNPsJMcYjTD+1EP1iZA8AMYi4G/d9xYeao/gBWio25FvZqBrTujFs3YJRvZE2SWrJIEiIO0IWiIv6OpaOKA+t&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="lead-details" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/lead-details</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;mTiBzKfxYjGpIQ0IFi8AalMsdhxZ+jaIcgq4eiX9cp8XhbibZ1tShdPFvCn/EqQZFMDwa17Svpkxx8TPKyUL7bdcKxUHF0neHSBcaksh5DfWrq1bPD5kaadGQ7dv/nG2tBa4PDAjHtvFZx2tKnuN+iDxSPWEXP51Mh3tAFUfGR8Zoppi3CQBOgj2v9g1rHasnl+SmOey7eqgs7h+/xId/hu5x4T+e4yDSqILLE6O306fc6+lAhVnuSvaz/YQYPmaqnNnMiWAhvdgPtl1nTHDgmWMbcqMO8za+rTATdlSsl108HE38FWCtheG2X4fF+gEuW2DjM9ga0QlO8w4R75Agxl7StElDK1puAvUK2a/SkSfsLp/2vLsMYl6wL/zTB21LcE9LcUhLM6JZ41YGa2lqya8fB8YB1CeDiK4gTb2hPE9w4zGfGwlqTXvxEAEFi4FHBOp7MarV5USlcYJBH9lenFnzvXxxtLlYSyGWr1ze43SJ7Yd8gVU8cvfTOPLWINFGFRXBiPB0JuWKbHFyobqo3RVAXg5woSFfNmrwZI098o=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="add-crm-leads" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/add-cat-leads</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">// {&#xd;
+//     &quot;superAppCoRelationId&quot;: &quot;ljdlkfjklsjfkj3234234234&quot;,&#xd;
+//     &quot;leads&quot;: [&#xd;
+//         {&#xd;
+//             &quot;agentId&quot;: &quot;90000&quot;,&#xd;
+//             &quot;customerName&quot;: &quot;ramesh goli&quot;,&#xd;
+//             &quot;mobileNumber&quot;: &quot;9090916234&quot;,&#xd;
+//             &quot;gender&quot;: &quot;Male&quot;,&#xd;
+//             &quot;catSource&quot;: &quot;Self Lead&quot;,&#xd;
+//             &quot;photo&quot;: &quot;/imagepath/photo.png&quot;,&#xd;
+//             &quot;dob&quot;: &quot;01/12/2000&quot;,&#xd;
+//             &quot;alternateMobileNo&quot;: &quot;9090909090&quot;,&#xd;
+//             &quot;email&quot;: &quot;ramesh@monocept.com&quot;,&#xd;
+//             &quot;nationality&quot;: &quot;Indian&quot;,&#xd;
+//             &quot;occupation&quot;: &quot;Salaried&quot;,&#xd;
+//             &quot;education&quot;: &quot;Graduate&quot;,&#xd;
+//             &quot;isPermanentAddressSame&quot;: false,&#xd;
+//             &quot;houseNo&quot;: &quot;HA091&quot;,&#xd;
+//             &quot;pinCode&quot;: &quot;752030&quot;,&#xd;
+//             &quot;city&quot;: &quot;Balugaon&quot;,&#xd;
+//             &quot;state&quot;: &quot;Odisha&quot;,&#xd;
+//             &quot;commHouseNo&quot;: &quot;HA091&quot;,&#xd;
+//             &quot;commPinCode&quot;: &quot;752031&quot;,&#xd;
+//             &quot;commCity&quot;: &quot;Banpur&quot;,&#xd;
+//             &quot;commState&quot;: &quot;Odisha&quot;,&#xd;
+//             &quot;campaign&quot;: &quot;Yes&quot;,&#xd;
+//             &quot;investment&quot;: &quot;Bonds&quot;,&#xd;
+//             &quot;income&quot;: &quot;&lt;5L&quot;,&#xd;
+//             &quot;leadStatus&quot;: &quot;Fresh Lead&quot;,&#xd;
+//             &quot;leadId&quot;: &quot;345781&quot;,&#xd;
+//             &quot;vymoId&quot;: &quot;9999999999&quot;,&#xd;
+//             &quot;probabilityClosure&quot;: &quot;Hot&quot;,&#xd;
+//             &quot;mainCampaign&quot;: &quot;Tejas&quot;,&#xd;
+//             &quot;lastActivityTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;,&#xd;
+//             &quot;customerId&quot;: &quot;188888818&quot;,&#xd;
+//             &quot;createTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;,&#xd;
+//             &quot;updateTime&quot;: &quot;2024-01-12T08:25:00.579+00:00&quot;&#xd;
+//         }&#xd;
+//     ]&#xd;
+// }&#xd;
+&#xd;
+&#xd;
+{&#xd;
+    &quot;payload&quot;:&quot;xTMlw7+a1MLHS8cTd+lykd7zG+KxzHYIF5Hpmaj+sfrXR5Le9zQMHsy5muvDIJ6Jn04GENZ8xYRUCvX5GgFKdMtcO7KaWj2AWoK5wcnQRLB7rrYSBTWMZFdlIZVqdfyXqsirrhjGeK9jVFq+LZnAk3R/x2mLLtEB0beawdTgz8ckKU4AxUOotUyXxfNanh7od8Ipr2C0dwOQq1g2AhKb4Hy9G2//owoQ40AoWQDiKi5mD+pOHZCU0vMdC4CIXI6n9lL1HkdTGKvAQGV6MT2pYsBkspS8l+qQ70sVCPoDOJfvhGxGRAoZqJDmqFJyu+2pf0jQJywTOZJz60m1Nrra8iVt5H4glPCJQQM0sNfzFsBZz6Q8QelXkR/vx4UeXePLnAEdu+oOb39Vsu9lkjzBtGCE7OQJIbVqiM+xe3tUGXGAj+ak1rXpL2O4RU0p2/1E2Gj58iiWh0oH5qcGHzcH4PxbUCEdwICASjre5x/aurHLxAjSuO9vIl2EGkp2omE6OItswpM4bCdTGR8E6LLymQ1vDx6rKRr+/9dHkUTqf6L8cfo6meV1zU3/BDnqLdROFtwb1no2rGAKACK1dEVH3QUT3eCAsKCSgqOPn6GGGoihZPhJreiimqGkYwM73YHGJEL7sRV0Jvi/hurvoq6TyA/6JuxPGoLDQI+VcbwzXo6uFNVWL5n6rvXYO1TfDN4Y78KGsc4I3gYWDAEr/jc65U7yY7/Xx8i0j0hVlXHa55i7DITnLgzK/l2KqFHLmT0BRyYSgD0OEpueUNCvwYWmEU8zHdmNcT1GFU8Pejc/rvxEMjw/UgoG5l+z05NsQ8kTvJvidthr3lgZLOuYGzdNOpRugCGrlSruiZihLsI4q+q2FAk/Ym/9cnmojTo/QFFQQ19+KxRg0RLh4ida4tVNrbSfUWVzrRuX5Kakn90c//rVAQ3PVj8NVMRREZfBIfe7HEzlWKBjNj5LtkdM6D37Q+pKAa8unv/2FeJiOqLEouLZIybwQ1+Zy6jDhxjIYJVe/Yx2uSWZoEMWGJhnOyCAeZyqXv0l6migVLCvGbNnLGwbMejouFYob1DwDWv0Xf0YeuJN0lReD7P+VMhrbOE7tPSgh8AZlkI4B3K7H4sXjnzzFrHbjWcGcLRtNsFyJxFDKPdyHqXXftRyxmeRTrHbhQErYchXmRn4H4ulvhRLFJI4yMCx9KIvb5zlIQTrf48bhrtk2PjvljUIfQaDcvfgwRjZztpN+kUlT1IwtaH9J3m/ZK3g836gsDGHG1/EORN8QNKaAogALR4RC1B99HijeACJ7UU75toxdir/JRM6nOzKtQ47sxM0j7PMrSuDhXaCLbgKZyntnk6XJJuQE9WCgpTW9Itrgaq2xhXXr85olKxx0bJeQtmofWrvu1HMorHABgm2wLpShoveGnuxSOVgBKIX6Ndku0pCEkSBphxcADb/cfmckQocIiGEyGQHxenNY1pjNvJljS8vxEMev0tt6EBeMzngI6YbcvOBVxxSzCLN4osClRuXT2rOSnJaivCmQ1pxgQuCdtOcxZOEW/lUTUiI7VBWhEsvXj+56Hlsm1XY3bxvN2/YhcG6nAiSzb6C51PtUYQd0JnHeJFN9fiRT3fnBLZTAWyp/mJYiS7RubPEaTWD8d2CYVVwCAN505bURF4MLwDtoo73U55iZmlfXpYQzM8EucsdADko/uklAP769NM/Grgblth0TuWHODsx7W/sIg9QoFeI1uF3IR4ziP9gzT/BW67PnTkiXPp0wJKzmbtfpO3PWAogppzkLMg4R1V5q1zxoQjMO8MphFgLphUFMuT2PuOPQXG7bjfqtL8Gmax8qOwQeXA8nZPz9r0iepSDdOGYqUQuCb2NJ6JDDjwZiTBywsD1/KsErIcDbmYLjVO2yg7Nxbh/xfOaYEYliHnIf2XDRcbqRi75vweJTt5oL/KSGs7bFipxZIRtbIq3DE1nDbSDu7fP0YI/q0Mn23Szt8k/aBZCAuiqflH6J1DKgoyEa72q9vEhRFrCUPlKyn5W8+aviJYRFpYht89wSxz/10Zw07C1KkCQIi8n+oORcF8hvcFOAyo1IeaFPm0=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="addLead" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/lead</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8esZMFPfds9gWGvIOdiME1m8IwJkTUdPpMP22hJfa1lgRmViqbHI2NkM6PLhNj3+cVQT90oIvwKjHIQEEBFwUvQjKgUPj5YeOYmjDfOFWZuBtdqK6TmM8ANiiyuXOS6syyTWNJ3UpbK3INHCJjLGxYK9NVAH0eG85w9Jq4ib4YFvCZlRRuoMk9UNqwYfl07EQk1oEhBj7aoZYVSlr/BuQ2FpPo70npIhUPP7Dit0Q5R7CYnjYnArR/Rtiv2D3UVlCUsNtWL0EWYAWEjBaHgHkwI3SIMzk+5wjutgi5I99bOMc2bnms1NVy/wdJnC6R8HH02/MHlJQsYdTZ6o/PPXVqZqYAvlsdKytVIJgzFBA6QZbTT9jFItNnaXIhbGAmG1ONU5Oae+bnJhe3MDQL+BFJmFRqvRFKX5yd3AWrfPBIJkPkWZxKNQb/OIMYEpI2eZ2pSl5wC/JRa6No+9aVEOrIufb1BNv97BUtlq1FiGaE924BETSFyKDO+qpRyPLDULH7vI1PEXPuMN/DsqjnjTiSLCW122+6MSIMNXfqfAJb3A07okyAMGmmaAreDXkYsgJncN7NL+9i8bNmVCAQp/bFHOXC8Blj4aUvQ6pWgsCVPVWVY9FC3sXnU3LfI7hXo8tuVICIIN5ULZFwPOHDKHQdNdpjqGxEzeQ5xl40hUb1RFw2R944WhEKF1gKwBrGZZXzZY71DALkG7Y5wsCaSfFrwj0VKKZx5twSheirl306C1vQJM/XW3l0AvwdkZ4jwBFuBvFRDDyJlMLEWj1i6ie6jLPQ/mfuSXZrAonEWwe2rXIVRs0FWF+y+p7FDkzUQVBoX9V7v3yZ8Al9I6S0OnWx4hZpO+edfYxAN6jJqYi6jX4KTXtXz1iI4qMMrWs3GiU9BfN3rB9B6/icjaDOOkOxqdKKzFCquI7HmA7HjuMXCfdQ7CyZjsNilaO0TCr9PRTFV0K88Pr1hrKaPqCkhTHnP9Zgn0hn+hUO5FoiU4SGbKVbdvo1+xSRxvs2GMzCB+C9r9+P8yLhH0SmHrpLaPgDnAmbJZxmz/DRnyE0wDvj0y&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get All Sizelers" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/sizzlers</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Smart-Nudges" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/smart-nudges</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Mark As Read" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/notification/mark-read</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;jWYm5xjMIT5+SxO/4y/GKQQVLVs1AAJ0F5YCogrrXSTsNhXnj4exX1c5Z04XVwWJ1rf3xGaqmHRaTI+Yz82kq0j9YLfDZArGY2mdsZ68SoTy6e/t6XXtSftxJG8svTKg&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Notifications By Tag" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/notification/list</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;JM4JGlJnHgAU19pun/6z9Xr07ubGllHyVvfBZW3Mf3Q=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get Attendance" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/attendance/status</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;BuUAsc1XCpZfZW2BuDFGgdrrGlvYlz82iK/HDKf2Xs/HVocP/2299Ep0lobaEZK3tqjWpegNzehgCL620u/H5AcWLnN5TH0S5RdRSwXxB7KTh8i+uaqrdgNQ7pRf+A1iGdfLsNQK4ufkxzRkOnH4zp46hgn0+5R4dHtsroVS3Qjq0COnHFEz104KgTUuVdUGZ98sFwsIhSrmwdNpKPV1FEIavT9XBpIZWQahqXsGlZP3n1I+rva9kKWpoRB4QcMhF7x260G+DMqtMpch5tS+ZViHnGeGCh5tC7iqphRQEszCxX0nfdRlfDwN7vWpi6QtluK+YnNMkleZ/pQjPflJTCTZM7PfuItFpTCP+TFPJdoOYd1Ak5v8gT48F2bTnEy59hd0nhQnp0iPxl1EZHYMKA==&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Mark Attendance" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/attendance/mark</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;4l4PaiXwbO+G/BiTdnaXNoJ5Kn6vorYe4C/HBB7bYUESrjgFcVGEosh1hPn0eQkoeqbgsFtcEwW+4KtKrt3ROC+rsDHvTo/W4jXQH7jZXI8Ve2fV52Bss6UWfZ0Aj5IOjGeP1u+O58yeptXhMz6rX3te1RZhAcKbnWNMxyMdLiVUZicyyvuW0awViegxzquIfUOtopN1lRw/lArLFf+kbzbxhjPIQZIXyIGaWlNg+nSVvqwxgHQKR/i62Z4KE7fpjVbOcBcN1sAjXUKJFfZ/t35i8BmdlGaSHrLAq6auhwfNgpaKh1mLtdHPxJJx285QgWs9iJo0ZbEntgMYzfIoZgBq/VodeFwuw/vfun0OSxjNlI5DJaSUFrsB+dGxHzCDoTcED98lxSLFwxD3n++L6Zmpd/s2atm6DC2Oab+gEWXDwV0pwIPLveBS802oJDtQTUSMLyE05ID3ZH70kK74m5Q9w1AppVUSV7/I40/MPL4/7JlVtkEfDEfK4GaIHyIxcQVYc23r8bPtYd0dqzhntxB1jXWxenp4ZcUCpe5QNR9cB00HEQObECQeW6U3nS+FK6j213mdL7KxGHoBHR/h0dmLPvWD+8fS3V0WPJ5du83aWY2CJfL57s4MheeNskN1qBBkjB3BG7RJOwvWlosTlfj9bcQyxDg52QqDNd62JrTm6Wp97NugcXTVGykzAXKE5i2Vn1FZcoPD/OEgNSclYq27IaDZAnLSCfPtEtkqg+bI7ja53mV/vptqmEVxo+pmX/V24KgqakFM1DWCcq0fBmW88bFHBrtht7BhY56TiN7pRIF1QQURzfCmjBE/RgU25BKqNB1nd/IYIurFvD0KTg2+FX0seOJ2ZKUYJbz6n7/AKDEWCN3MhzKSlwvjyC4BLujWMzXtNuofXfY38h3LTMFBGJg+R7mDdmKX4e/suR588e6stsV3FGNVAty5GqDo&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Get All Events" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/calendar/events</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;/Avns7bf20nlYo+x2KAppbVxYx3k10g9jdLiOuBXzos=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="sales Copy" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/kpi/sales</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;j89OPXxD2ts2TwA8GxyQpORtn2BlxpDy2zUlaE6xDTiIQnnlNXnjhJ+1tO92EMke&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="acitivity Copy" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/kpi/activity</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;j89OPXxD2ts2TwA8GxyQpORtn2BlxpDy2zUlaE6xDTiIQnnlNXnjhJ+1tO92EMke&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="cheque Copy 2" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/cheque</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;Rq0EuvOyr6gl2GER2BVCCKoNxBwKFdIh/8T2Q1jCLN0=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="lead-details-team" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/lead-details</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;mTiBzKfxYjGpIQ0IFi8AalMsdhxZ+jaIcgq4eiX9cp8XhbibZ1tShdPFvCn/EqQZFMDwa17Svpkxx8TPKyUL7WPdj8VS+G8mCAMhMyMWI88OR8BcgmO7fLC9FI6oRGecmdbYZWPfgXH9vFffJQ6nxux/a9h87uucQj9H1Ahz30YU7MShGpEyXDrivQmJWOnMjjZMH4u4AHTmLftqlkWH3kbuoqdxuKvlgn1SF5W3DXZhjMjAG5QEkFdOJ1YJNd7LITUQ9KW8r3d0TYCqU7oINCLleAoR6A1VKAS2uqfEVjpcJ560iZuR/LLRFiVIut+fgEsHVFJFk53HMLUf/hnw8TG28bgd/kI7MrNj6LekkAvT4v3w3zv2ecn3Zbe882rk/DyAflBnLGTlqahywb8GndRxEeOHHdZPgJmZEk5EQ18f/SIR6AUHCenlizDio7uU33tVgruppBy09/B+H1x0P9tiyhsxHUjj3ZctCjywxMinr2iWtCsqA4Izbmn/Cc8+exW1KMLnG97A21tF05UHapCM80NUrb5FTaDL1EHlfL5uEtEYugXNN//HNXd56ba0glFE2fkxR+9R5Z0+34zx/PHrbl250n9es+y28/WXwjiujZn+KX7D4JoVCLVcvsV6&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="generateQuote" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/generate-quote</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;mTiBzKfxYjGpIQ0IFi8AalMsdhxZ+jaIcgq4eiX9cp/6iNCE9/WwxAI2nAPWWNNaVseJzjdr4sRJWAFfzFJ1by+R0klwuEM9aiY1JzbGxD8=&quot;&#xd;
+}&#xd;
+</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="One View SuperApp V1" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/sales-report</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;ut8XcFYJkaXpA4m9bbYLGDxOtMoDkqlorXbbZvOhFZPi9LRpHkx4gWsZS8M0W7I9TUeGiO+j4SGwq+XielVnPpuU9GEBFAKI+wMHgoRsyYvweAhkVHwO92jemHUMy+DT2TuZXUFs4DPrAcScq4H3JT4JyfEuA1WwPd1TbEbkzHtWPVIMqS4oud4YnwRRpcSn36UY/vgK8CsSeLzZ5Pp/lNV1ZzSOa6hX7F5dEieH13k=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Birthday API" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/birthdays</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;payload&quot;:&quot;4l4PaiXwbO+G/BiTdnaXNrBzhlWkr4f0hryF4PA6FNwANBRDAr0An7nyVA0LgiKfpM+o59G+Mj4S46obZfD7uUha2asRp28CYxdkXMSLXsBIn4bcMYeQ7I7Ol4Ox9ciBPAXq7X3YJ7JQwImGxRyFGKnpFfpq2A4y2a1z29a7xMRT9/TRLrAbwigM10DQ+IloYkV7RNB2KCra8mPe7ZjuJw==&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              </elementProp>
+              <elementProp name="superappauthtoken" elementType="Header">
+                <stringProp name="Header.name">superappauthtoken</stringProp>
+                <stringProp name="Header.value">Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IlBBQkRSMDc5MF9Qcm9kdWNlciIsImlhdCI6MTcxMTcxOTA4OCwiZXhwIjoxNzEyNTgzMDg4fQ.AfUF8lcbLc3_vdDZIYX-4GoKBHmP-5t-0G0iMsnO00Yeh1OLibs6DRZJUi7jN2ucyb6qVrlW88_0BALxMH6shg</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer eyJraWQiOiJHdlBORnZiR2VTWEpPTFBBY21BUzY3Y25xZ2RKRUQ2YkpJaEVQNE5BOEI0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWRtaW5cL3dyaXRlIGFkbWluXC9yZWFkIiwiYXV0aF90aW1lIjoxNzExNzE5MTYwLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX2dZTTVPN005MiIsImV4cCI6MTcxMTcyMjc2MCwiaWF0IjoxNzExNzE5MTYwLCJ2ZXJzaW9uIjoyLCJqdGkiOiI1YzYwYTQ0YS01N2FlLTRhY2EtYjc2My1hMjU2MDc1ZjJmMmYiLCJjbGllbnRfaWQiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayJ9.iKpOmvNDTiwC4azoVYHjD0CDJr6vUUWhHZHyRbZtoDWH2t652-2RkGGw619JGdAOxz-FtONnP8IH6YxhQ96kiM9qmn1yMyn02Qkj9zDX3uTwfojQ3wzpuoIqS7Ddj3LwaPx2GNd5CEdi7Rc0MB5VvSdE5luhd7MN4bGMQyQeuHEwSUrc3e5XmmKKsrCWwMK8VtWgdIknyJ7MruQsD6fTGpNndiNJ4QOVExXxQkBCZ7dS0SOkWOAT7th0WUrejgln34eD5s7m-2TZEN_gLOMn7y2ji8HzONrROpgImC7b_yBKtFKsvhANl2KSOWKYRmm1cOhNDNWtVEe4Q9kG5hLidA</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="dev mpower" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/briefcase</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;Cu53QFll7l4LcJmgrvxkQlHbMMhfhWqaGNKaeOrQ9oUhxiELBBO7Tjf07edR0GHQv44lszehKxPTRty0FoUmPgJegXSBf7bLcYGdlBMec0HcSertqO8+kxWwfdlwP8RpD3h8s07iadNka0uvtHiMlQ==&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="ELY" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/ely</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;V70OADFaD8I1n7AXJ50hWNHGVlznUVV9JHuo7YClsq05JVHi4VoQkWVwjE1z916W+E9jWYJOYo7JUVUz/uUxIJTKihQRV5qHYOU+B42cZRk=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">zGVsUXS2gERSXttUpHRD2d3cejLI6YE7cf7ZKXdd</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="superappauthtoken" elementType="Header">
+                <stringProp name="Header.name">superappauthtoken</stringProp>
+                <stringProp name="Header.value">Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyRGV0YWlscyI6IkxHSlBSMDU1Nl9CUk0tU3VwZXJ2aXNvciIsImlhdCI6MTcxMTY5MzM3MywiZXhwIjoxNzEyNTU3MzczfQ.Yi4OAlFk1f7XxIhuwFqTvF-srhp4_e2fK7FTDT40DV6lhqLqJesH5DP-rV-GLnwJpgsrUKAmtPw0FVIB0ZTXVg</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer eyJraWQiOiJHdlBORnZiR2VTWEpPTFBBY21BUzY3Y25xZ2RKRUQ2YkpJaEVQNE5BOEI0PSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayIsInRva2VuX3VzZSI6ImFjY2VzcyIsInNjb3BlIjoiYWRtaW5cL3dyaXRlIGFkbWluXC9yZWFkIiwiYXV0aF90aW1lIjoxNzExNzE4OTE1LCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuYXAtc291dGgtMS5hbWF6b25hd3MuY29tXC9hcC1zb3V0aC0xX2dZTTVPN005MiIsImV4cCI6MTcxMTcyMjUxNSwiaWF0IjoxNzExNzE4OTE1LCJ2ZXJzaW9uIjoyLCJqdGkiOiI5Y2QwZGNmZC1mODYxLTRmZjgtYTBhOS01NTJhZDJhMDNmZGEiLCJjbGllbnRfaWQiOiIxbjEzMGR1Zm1uN2FrZDgyaGZzcnQyaGx0ayJ9.LVuW_452KDZArjl2ud7Pn4wZ7YvPu2jOqGBbVQhuw_4XhAbGiKuankGuzMtcbr8JvtfulGVuaVahJcihzCS8Fw4C1P97VenWOeHAEN4rYzmGeDDw8R4F0wxDZYlzp6XwrzFWMyrEaVnF5KXJPS6R07e39CpL71l3s5zyYnGJv0wB414QpCqXbg_qrUkqsOH4FIpQ4eaEJqlciN5b0BP2YDLqEHZCUEDOnOKHSi_wUbX6ZOTFIwDFfpNwG4lbs-ZJmpv5Q4Vgr2pQV1WDhHo3ywjkNcMpLtEnIXHDTNS0Gd-RI1eY9uPUr63KWQRzFIWyL6zNHlybNMqxJ3WqzZLl9Q</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="CARS" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/it-helpdesk</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;10rTMpeay+YE2Hn8GuPFogRYyojBtkXd4+tm20xOMIE=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MPRO policy-creation" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/policy-creation</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8SATuKqsoZKIgPdqXyDdlLtAXEE9dz1xYRF7MxI8JGOvEWDte6wvvo0H8gGLKMXYNQtxQ6H4uZ6Vm++qa7JiatE=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MPRO policies" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/policies</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8SATuKqsoZKIgPdqXyDdlLtAXEE9dz1xYRF7MxI8JGOvEWDte6wvvo0H8gGLKMXYNawcU7zVX3M7l2JKRYfIzQojF9wJqhFy3n9tgo0tY9udZ43hgmW29+5HR5FnJvevoA==&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MPRO Policy Status" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/policies-status</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8SATuKqsoZKIgPdqXyDdlLtAXEE9dz1xYRF7MxI8JGOvEWDte6wvvo0H8gGLKMXYNQtxQ6H4uZ6Vm++qa7JiatE=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="MPRO track-application" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/track-application</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8SATuKqsoZKIgPdqXyDdlLtAXEE9dz1xYRF7MxI8JGOvEWDte6wvvo0H8gGLKMXYNawcU7zVX3M7l2JKRYfIzQrus6CfFX8vZkzos7sHle8nNX9O8ZrjQQFSJ/J5f1C3/ztZog5v4YnHQo31J8krEc8=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="dev persistency url" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/recovery</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;:&quot;BuUAsc1XCpZfZW2BuDFGgVO10HvFPzN7LVzz7MXcMryrUUzWpyaC01am1V1l9qgu5CHoKSx4kBDExvIbn8QKH4SPURdpvh1enKmZALjFlw14lLArYR5/gZOr1Y+8Bf30&quot;&#xd;
+}&#xd;
+&#xd;
+// this is a part of analytics-ms not in deeplink-ms please move this in analytics-ms folder</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="generate-quote" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/quotes</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;zfbVm42uajZh/qlFVJjQxISneiOsnPns43eIHVOFLcTlhlmhJxYEaJdncJ695pJ7zG9yRLk+QHMfQlVqQSjXFNNOKZa5yxsWuMdSILVTgOpU+tsJGiv9DX3fluprUg/FdqKf0Qix5KQRCnsOvZQILXfWK73zgKker7Yge7HH+LYqI85W8L8lV/mKlVZv/h2NQF4fu427iwPn4r5yKy+wn/7+F3mwp0X3mCBToEp9L3MyyqfuvGC/uimcqFVuYgDgvGp0TpT5NXQ2U5eXy+1cmWCbxyPPsQ77rspVmGqAmWg3wI/lYJicsxSF5qqsXlogYAj9k6Pbkvw2jnZbOibgRy8FXo6Ry6w1W6DVr1uvMuquEP1zp4hvSfl+LVVr4C44TkwTQtcpMubrpCwpDl4HcDfbK+QgXdxZscmQxUxgijrq6Nvk04dYtLiaEhtSubBB&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="VYMO token Create API" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/target-auth-token</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;k+sJknvWcVLL6AfTfiFV8aoK111JodiFuunaG/a68eLFhlHezApoPAf3tARJUUHZQN0r8MWpbqEO2OzeMbMf4fvEamGcEoW+3lTayUOXvLE=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="team list" enabled="false">
+          <stringProp name="HTTPSampler.domain">devapi.maxlifeinsurance.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/superapp/api/team/team-list</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;payload&quot;: &quot;mBPrP2usizcUxAFq9D3ZvDoLw4zk1dWlugFKSe2u14g=&quot;&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="SuperAppAuthToken" elementType="Header">
+                <stringProp name="Header.name">SuperAppAuthToken</stringProp>
+                <stringProp name="Header.value">${devSuperAppAuthToken}</stringProp>
+              </elementProp>
+              <elementProp name="x-api-key" elementType="Header">
+                <stringProp name="Header.name">x-api-key</stringProp>
+                <stringProp name="Header.value">${devXapiKey}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">${devCognitoToken}</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="false">
+          <boolProp name="displayJMeterProperties">false</boolProp>
+          <boolProp name="displayJMeterVariables">true</boolProp>
+          <boolProp name="displaySystemProperties">false</boolProp>
+        </DebugSampler>
+        <hashTree/>
+      </hashTree>
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>true</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <sentBytes>true</sentBytes>
+            <url>true</url>
+            <threadCounts>true</threadCounts>
+            <idleTime>true</idleTime>
+            <connectTime>true</connectTime>
+          </value>
+        </objProp>
+        <stringProp name="filename"></stringProp>
+      </ResultCollector>
+      <hashTree/>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
